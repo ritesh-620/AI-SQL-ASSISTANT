@@ -1,0 +1,12 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Maven
+target/ 
+
+# Spring Boot configuration
+backend/src/main/resources/application.properties
+
+# Environment files
+.env

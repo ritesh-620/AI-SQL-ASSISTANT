@@ -1,0 +1,370 @@
+:root {
+--bg-main: #1e293b;
+--bg-header: #111827;
+--bg-card: #0f172a;
+--accent: #06b6d4;
+--accent-hover: #22d3ee;
+--text-main: #f8fafc;
+--text-muted: #94a3b8;
+--border: #334155;
+}
+
+/* -------------------------
+Reset
+------------------------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, sans-serif;
+background: var(--bg-main);
+color: var(--text-main);
+}
+
+/* -------------------------
+Header
+------------------------- */
+
+#header {
+    min-height: 60px;
+    padding: 0 2rem;
+    background: var(--bg-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.logo i {
+    margin-right: 6px;
+    color: var(--accent);
+}
+
+.logo span {
+ color: var(--accent);
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* -------------------------
+Buttons
+------------------------- */
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+ background: var(--border);
+}
+
+.btn:active {
+ transform: scale(0.97);
+}
+
+.btn-primary {
+ background: var(--accent);
+ color: #000;
+}
+
+.btn-primary:hover {
+ background: var(--accent-hover);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.signup-btn {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.signup-btn:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* -------------------------
+Main Container
+------------------------- */
+
+.main-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* -------------------------
+Cards
+------------------------- */
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+/* -------------------------
+Query Input
+------------------------- */
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+input::placeholder {
+   color: var(--text-muted);
+}
+
+input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.15);
+}
+
+/* -------------------------
+Query Chips
+------------------------- */
+
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.chip {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.chip:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+}
+
+/* -------------------------
+Output Section
+------------------------- */
+
+.output-card {
+overflow: hidden;
+}
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.btn-sm {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-main);
+    font-size: 0.85rem;
+    }
+
+.btn-sm:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* -------------------------
+SQL Code
+------------------------- */
+
+pre {
+    width: 100%;
+    padding: 16px;
+    background: var(--bg-main);
+    border-radius: 8px;
+    overflow-x: auto;
+    color: #38bdf8;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+code {
+font-family: inherit;
+}
+
+/* -------------------------
+Tablet
+------------------------- */
+
+@media (max-width: 700px) {
+
+    #header {
+    padding: 12px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    }
+
+    .logo {
+    text-align: center;
+    }
+    .nav-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+
+    .main-container {
+    margin-top: 25px;
+    }
+
+}
+
+/* -------------------------
+Mobile
+------------------------- */
+
+@media (max-width: 500px) {
+
+    #header {
+    padding: 12px 15px;
+    }
+
+    .nav-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+
+    }
+
+    .nav-buttons .btn {
+    width: 100%;
+    }
+
+    .main-container {
+    margin: 20px auto;
+    padding: 0 12px;
+    }
+
+    .card {
+    padding: 18px;
+    border-radius: 10px;
+    }
+
+    .input-group {
+    flex-direction: column;
+    }
+
+    input {
+    width: 100%;
+    }
+
+    .btn-primary {
+    width: 100%;
+    }
+
+    .chips-container {
+    flex-direction: column;
+    }
+
+    .chip {
+    width: 100%;
+    text-align: left;
+    }
+
+    .output-header {
+    align-items: flex-start;
+    gap: 10px;
+    }
+
+    pre {
+    padding: 12px;
+    font-size: 0.8rem;
+
+    }
+}
+
+
+/* -------------------------
+Very Small Screens
+------------------------- */
+
+@media (max-width: 350px) {
+
+.card {
+padding: 14px;
+}
+
+.logo {
+font-size: 1.1rem;
+}
+
+.nav-buttons {
+grid-template-columns: 1fr;
+}
+
+}

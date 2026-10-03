@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI SQL Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+        <div class="logo">
+           <i class="fa-solid fa-database"></i>
+           SQL<span>AI</span>
+        </div>
+        <nav class="nav-buttons">
+        <button class="btn">Editor</button>
+        <button class="btn">Docs</button>
+        <button class="btn">History</button>
+        <button class="btn signup-btn">Sign Up +</button>
+        </nav>
+   </header>
+
+  <!-- Main Content -->
+
+  <main class="main-container">
+<!-- Query Card -->
+    <section class="card">
+
+        <label for="user-query">
+            Describe your database query:
+        </label>
+
+        <div class="input-group">
+            <input type="text" id="user-query"placeholder="e.g., Show top 5 highest spending customers in 2024">
+            <button id="generate-btn" class="btn btn-primary">
+                Generate SQL
+            </button>
+
+        </div>
+        <!-- Preset Queries -->
+        <div class="chips-container">
+
+            <button
+            class="chip"
+            onclick="setQuery('Show all active users signed up this month')"
+            >
+            Active users this month
+            </button>
+
+            <button
+            class="chip"
+            onclick="setQuery('Calculate monthly revenue by product category')"
+            >
+            Monthly revenue by category
+            </button>
+
+        </div>
+    </section>
+    <!-- SQL Output -->
+    <section class="card output-card" id="output-card">
+
+        <div class="output-header">
+
+            <span>Generated SQL</span>
+
+            <button id="copy-btn" class="btn btn-sm">
+            <i class="fa-regular fa-copy"></i>
+            Copy
+            </button>
+
+        </div>
+
+        <pre><code id="sql-output">-- Your generated query will appear here...</code></pre>
+    </section>
+</main>
+ <script src="script.js"></script>
+</body>
+</html>
